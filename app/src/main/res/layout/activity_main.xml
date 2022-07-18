@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/common_google_signin_btn_text_dark_focused"
+    tools:context=".ui.activities.MainActivity">
+
+    <TextView
+        android:id="@+id/sotw_label"
+        android:layout_width="125dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/rectangle_rounded_drawable"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:textColor="@color/ColorFontPrimary"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/divider1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="spread" />
+
+    <View
+        android:id="@+id/divider1"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:background="?android:attr/listDivider"
+        android:backgroundTint="@color/ColorAccent"
+        android:backgroundTintMode="screen"
+        app:layout_constraintBottom_toTopOf="@+id/llvSpeedo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sotw_label"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <LinearLayout
+        android:id="@+id/llvSpeedo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/divider2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider1">
+
+        <TextView
+            android:id="@+id/txtVelocity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:fontFamily="@font/graduate"
+            android:textAlignment="textEnd"
+            android:textColor="@color/ColorFontPrimary"
+            android:textSize="75sp"
+            android:textStyle="bold"
+            tools:ignore="RtlCompat" />
+
+        <TextView
+            android:id="@+id/txtUnit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-medium"
+            android:textAlignment="viewStart"
+            android:textColor="@color/ColorFontPrimary"
+            android:textSize="24sp"
+            tools:ignore="RtlCompat" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="?android:attr/listDivider"
+        android:backgroundTint="@color/ColorAccent"
+        android:backgroundTintMode="screen"
+        app:layout_constraintBottom_toTopOf="@+id/llvCount"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/llvSpeedo" />
+
+    <LinearLayout
+        android:id="@+id/llvCount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:baselineAligned="false"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/flExtras"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtTi"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/time"
+                android:textAlignment="center"
+                android:textColor="@color/ColorFontPrimary" />
+
+            <Chronometer
+                android:id="@+id/chronoTime"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAlignment="center"
+                android:textColor="@color/ColorFontSecondary" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtDist"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/distance"
+                android:textAlignment="center"
+                android:textColor="@color/ColorFontPrimary" />
+
+            <TextView
+                android:id="@+id/txtDistance"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAlignment="center"
+                android:textColor="@color/ColorFontSecondary" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtAvgSp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/avg_speed"
+                android:textAlignment="center"
+                android:textColor="@color/ColorFontPrimary" />
+
+            <TextView
+                android:id="@+id/txtAvgSpeed"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAlignment="center"
+                android:textColor="@color/ColorFontSecondary" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtMaxSp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/max_speed"
+                android:textAlignment="center"
+                android:textColor="@color/ColorFontPrimary" />
+
+            <TextView
+                android:id="@+id/txtMaxSpeed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textColor="@color/ColorFontSecondary" />
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/bttReset"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/button_rounded_drawable"
+            android:contentDescription="@string/reset"
+            android:onClick="onClickReset"
+            app:srcCompat="@android:drawable/ic_menu_revert" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/flExtras"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/llvCount">
+
+        <LinearLayout
+            android:id="@+id/llvAccelDecel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <Button
+                android:id="@+id/bttBack"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/button_rounded_drawable"
+                android:padding="2dp"
+                android:text="@string/back"
+                android:textColor="@color/ColorFontPrimary" />
+
+            <LinearLayout
+                android:id="@+id/llvAccelDecelText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtStSp"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="5dp"
+                    android:text="@string/start_speed"
+                    android:textAlignment="center"
+                    android:textColor="@color/ColorFontPrimary"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/txtT"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="5dp" />
+
+                <TextView
+                    android:id="@+id/txtSp"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="5dp"
+                    android:text="@string/target_speed"
+                    android:textAlignment="center"
+                    android:textColor="@color/ColorFontPrimary" />
+
+                <TextView
+                    android:id="@+id/txtB"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="15dp"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llvAccelDecelData"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtStartSpeed"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textAlignment="center"
+                    android:textColor="@color/ColorFontTertiary"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/txtTo"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/to"
+                    android:textAlignment="center"
+                    android:textColor="@color/ColorFontPrimary"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/etxSpeed"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:autofillHints="@string/speed"
+                    android:background="@drawable/rectangle_rounded_drawable"
+                    android:ems="10"
+                    android:hint="@string/speed"
+                    android:inputType="number"
+                    android:textAlignment="center"
+                    android:textColor="@color/ColorFontSecondary"
+                    android:textColorHighlight="@color/ColorFontPrimary"
+                    android:textColorHint="@color/ColorFontTertiary"
+                    android:textColorLink="@color/ColorFontPrimary"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/bttGo"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="15dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_rounded_drawable"
+                    android:text="@string/start"
+                    android:textColor="@color/ColorFontPrimary" />
+
+            </LinearLayout>
+
+            <Chronometer
+                android:id="@+id/chronometer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="32dp"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:textColor="@color/ColorFontPrimary"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llhButtons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false">
+
+            <Button
+                android:id="@+id/bttAccelDecel"
+                style="@android:style/Widget.Material.Light.Button.Borderless"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/button_left_rounded_drawable"
+                android:onClick="onClickAccelDecel"
+                android:text="@string/accel_decel"
+                android:textColor="@color/ColorFontPrimary" />
+
+            <Button
+                android:id="@+id/bttStart"
+                style="@android:style/Widget.Material.Light.Button.Borderless"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/button_drawable"
+                android:onClick="onClickStart"
+                android:text="@string/start_journey"
+                android:textColor="@color/ColorFontPrimary" />
+
+            <Button
+                android:id="@+id/bttJourneys"
+                style="@android:style/Widget.Material.Light.Button.Borderless"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/button_right_rounded_drawable"
+                android:onClick="onClickJourneys"
+                android:text="@string/journeys"
+                android:textColor="@color/ColorFontPrimary" />
+
+        </LinearLayout>
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

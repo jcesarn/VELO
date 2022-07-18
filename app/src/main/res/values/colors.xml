@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="ColorBackground">#000000</color>
+    <color name="ColorAccent">#222222</color>
+
+    <color name="ColorFontPrimary">#FF0000</color>
+    <color name="ColorFontSecondary">#FFFFFF</color>
+    <color name="ColorFontTertiary">#666666</color>
+
+    <color name="ColorButtonGradientStart">#222222</color>
+    <color name="ColorButtonGradientEnd">#000000</color>
+
+    <color name="ColorButtonPressedGradientStart">#303030</color>
+    <color name="ColorButtonPressedGradientEnd">#101010</color>
+
+</resources>
